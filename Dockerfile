@@ -1,5 +1,5 @@
 FROM python:latest
-LABEL maintainer="rapid.suraj@gmail.com"
+LABEL maintainer="surajtembhare3@gmail.com"
 ENV PYTHONUNBUFFERED 1
 
 COPY ./requirements.txt /tmp/requirements.txt
