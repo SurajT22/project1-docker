@@ -3,7 +3,9 @@ Test the models
 """
 
 from django.test import TestCase
-from django.contrib.auth import get_user_model # from django.contrib.auth.models import User
+from django.contrib.auth import (
+    get_user_model,
+)  # from django.contrib.auth.models import User
 
 
 class ModelTests(TestCase):
@@ -14,10 +16,7 @@ class ModelTests(TestCase):
 
         email = "test@example.com"
         password = "test@123"
-        user = get_user_model().objects.create_user(
-            email=email,
-            password=password
-        )
+        user = get_user_model().objects.create_user(email=email, password=password)
         # self.assertEqual(user.password,password)
         self.assertEqual(user.email, email)
         self.assertTrue(user.check_password(password))
@@ -46,19 +45,13 @@ class ModelTests(TestCase):
 
         # get_user_model().objects.create_user("", "password@123")
         self.assertRaises(
-            ValueError,
-            get_user_model().objects.create_user,
-            "",
-            "password@321"
+            ValueError, get_user_model().objects.create_user, "", "password@321"
         )
 
     def test_new_user_with_short_password(self):
         """Test that new user cannot be created with short password (<5)"""
         self.assertRaises(
-            ValueError,
-            get_user_model().objects.create_user,
-            "test@example.com",
-            "pass"
+            ValueError, get_user_model().objects.create_user, "test@example.com", "pass"
         )
 
     def test_new_user_as_superuser(self):

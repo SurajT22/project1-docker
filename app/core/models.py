@@ -4,7 +4,7 @@ from django.db import models  # noqa
 from django.contrib.auth.models import (
     AbstractBaseUser,
     PermissionsMixin,
-    BaseUserManager
+    BaseUserManager,
 )
 
 ################################################################################
@@ -38,7 +38,6 @@ class UserManager(BaseUserManager):
         if len(password) < 5:
             raise ValueError("Password is too short")
 
-
         # with `self.model` we are using method associated
         # with default user model
         # as we are deriving from `BaseUserManager`
@@ -52,11 +51,11 @@ class UserManager(BaseUserManager):
         user.save(using=self._db)
         return user
 
-    def create_superuser(self, email=None,password=None,**extra_fields):
+    def create_superuser(self, email=None, password=None, **extra_fields):
         """
         whenever we call `python manage.py createsuperuser`, django looks for this method
         """
-        user = self.create_user(email,password)
+        user = self.create_user(email, password)
         user.is_superuser = True
         user.is_staff = True
         user.save(using=self._db)
@@ -65,6 +64,7 @@ class UserManager(BaseUserManager):
 
 class User(AbstractBaseUser, PermissionsMixin):
     """User in application"""
+
     email = models.EmailField(max_length=255, unique=True)
     # email = models.EmailField(max_length=255, unique=True, blank=False)
     name = models.CharField(max_length=255)
@@ -73,4 +73,4 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     objects = UserManager()
 
-    USERNAME_FIELD = 'email'  # overrides the default user field from base class
+    USERNAME_FIELD = "email"  # overrides the default user field from base class
