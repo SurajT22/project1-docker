@@ -36,7 +36,7 @@ class PublicUserApiTests(TestCase):
         """Instantiate test application"""
 
         self.client = APIClient()
-        # NOTE - if we create test data here, it is called as `test fixture`
+        # NOTE - if we create test data here , it is called as `test fixture`
 
     def test_create_user_success(self):
         """
