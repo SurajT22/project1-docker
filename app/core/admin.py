@@ -52,7 +52,7 @@ class UserAdmin(BaseUserAdmin):
 
 
 admin.site.register(models.User, UserAdmin)
-# admin.site.register(models.Portal)
-# admin.site.register(models.JobTitle)
-# admin.site.register(models.JobDescription)
-# admin.site.register(models.Applicant)
+admin.site.register(models.Portal)
+admin.site.register(models.JobTitle)
+admin.site.register(models.JobDescription)
+admin.site.register(models.Applicant)
