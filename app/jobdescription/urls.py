@@ -1,9 +1,9 @@
-"""URLs for job API"""
+"""URLs for JobDescription API"""
 
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 
-from job import views
+from jobdescription import views
 from . import views
 
 # `DefaultRouter` provided by DRF automatically creates URL routing for us
@@ -13,10 +13,8 @@ from . import views
 router = DefaultRouter()
 
 # this app name will be utilized in reverse function
-app_name = "jobtitle"
-router.register("jobtitles", views.JobTitleViewSet)
-
-
+app_name = "jobdescription"
+router.register("jobdescription", views.JobDescriptionViewSet)
 urlpatterns = [
     path("", include(router.urls)),
 ]

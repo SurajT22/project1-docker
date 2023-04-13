@@ -1,5 +1,5 @@
 """
-Serializers for Portal APIs
+Serializers for JobTitle APIs
 """
 
 from rest_framework import serializers
@@ -26,18 +26,3 @@ class JobTitleDetailSerializer(JobTitleSerializer):
 
     class Meta(JobTitleSerializer.Meta):
         fields = JobTitleSerializer.Meta.fields + ["job_description", "portal"]
-
-
-class PortalSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Portal
-        fields = ["name", "description"]
-        read_only_fields = ["id"]
-
-
-class PortalDetailSerializer(serializers.ModelSerializer):
-
-    class Meta(PortalSerializer.Meta):
-        fields = PortalSerializer.Meta.fields + [
-            "user",
-        ]

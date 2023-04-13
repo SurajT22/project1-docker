@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     "drf_spectacular",
     "user",
     "job",
+    "portal",
+    "jobdescription",
 ]
 
 MIDDLEWARE = [
