@@ -85,8 +85,7 @@ class PrivateJobTitleApiTests(TestCase):
 
         # portal
         self.portal = Portal.objects.create(
-            user=self.user,
-            name="nukari.com", description="famous job hunting website"
+            user=self.user, name="nukari.com", description="famous job hunting website"
         )
 
         # job_description
@@ -94,7 +93,7 @@ class PrivateJobTitleApiTests(TestCase):
             user=self.user,
             role="To build backend microservices",
             description_text="should know git,CICD, Linux and must know Python",
-            pub_date=timezone.now()
+            pub_date=timezone.now(),
         )
         self.client.force_authenticate(self.user)
 

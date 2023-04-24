@@ -12,6 +12,7 @@ from portal import serializers
 # Create your views here.
 from core.models import Portal
 from rest_framework import viewsets
+
 # from rest_framework.views import APIView
 
 
