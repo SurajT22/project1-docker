@@ -13,7 +13,7 @@ from core.models import JobTitle, Portal, JobDescription
 from job.serializers import JobTitleSerializer, JobTitleDetailSerializer
 
 
-JOB_TITLE_URL = reverse("job:jobtitle-list")  # /api/jobtitle/jobtitles
+JOB_TITLE_URL = reverse("jobtitle:jobtitle-list")  # /api/jobtitle/jobtitles
 
 """
 TODO - refer
@@ -85,14 +85,16 @@ class PrivateJobTitleApiTests(TestCase):
 
         # portal
         self.portal = Portal.objects.create(
+            user=self.user,
             name="nukari.com", description="famous job hunting website"
         )
 
         # job_description
         self.job_description = JobDescription.objects.create(
+            user=self.user,
             role="To build backend microservices",
-            description="should know git ,CICD, Linux and must know Python.",
-            pub_date=timezone.now(),
+            description_text="should know git,CICD, Linux and must know Python",
+            pub_date=timezone.now()
         )
         self.client.force_authenticate(self.user)
 
