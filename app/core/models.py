@@ -9,9 +9,9 @@ from django.contrib.auth.models import (
     BaseUserManager,
 )
 
-################################################################################
+###############################################################
 # TOPIC: customizing authentication and user model in django
-################################################################################
+##############################################################
 """
 How to customize default django user model and authentication
 Refer-
@@ -31,7 +31,8 @@ class UserManager(BaseUserManager):
         password: set password method should be encrypted format
         inside the function called type annotations
         create,save and return new user
-        **extra_fields: using this arbitrary keyword args option to accommodate any additional user fields in future
+        **extra_fields: using this arbitrary keyword args option
+        to accommodate any additional user fields in future
         """
 
         if not email:
