@@ -7,7 +7,6 @@ TODO EXERCISE
 4. Write as many test cases as you can for `job_description` endpoints
 """
 
-from rest_framework import viewsets
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.permissions import IsAuthenticated
 
@@ -15,15 +14,14 @@ from rest_framework.permissions import IsAuthenticated
 from core.models import JobTitle
 from job import serializers
 
-from django.http import HttpResponse, JsonResponse
-from rest_framework.response import Response
-from rest_framework import status
+# from django.http import HttpResponse, JsonResponse
+# from rest_framework.response import Response
+# from rest_framework import status
 
 # Create your views here.
-from core.models import Portal
 from rest_framework import viewsets
-from rest_framework.response import Response
-from rest_framework.views import APIView
+# from rest_framework.response import Response
+# from rest_framework.views import APIView
 
 
 class JobTitleViewSet(viewsets.ModelViewSet):

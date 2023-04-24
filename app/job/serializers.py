@@ -3,7 +3,7 @@ Serializers for JobTitle APIs
 """
 
 from rest_framework import serializers
-from core.models import Portal, JobTitle
+from core.models import  JobTitle
 
 
 class JobTitleSerializer(serializers.ModelSerializer):

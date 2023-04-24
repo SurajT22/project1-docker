@@ -6,11 +6,11 @@ from rest_framework.test import APIClient
 from rest_framework import status
 from django.utils import timezone
 
-from django.urls import reverse, reverse_lazy
+from django.urls import reverse
 
 # We have registered `core` as an application under `INSTALLED_APPS`
 from core.models import JobTitle, Portal, JobDescription
-from job.serializers import JobTitleSerializer, JobTitleDetailSerializer
+from job.serializers import JobTitleSerializer
 
 
 JOB_TITLE_URL = reverse("jobtitle:jobtitle-list")  # /api/jobtitle/jobtitles

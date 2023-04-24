@@ -5,7 +5,7 @@
 Views for the user API
 """
 
-from rest_framework import generics
+# from rest_framework import generics
 from rest_framework import authentication, permissions
 from rest_framework.generics import CreateAPIView, RetrieveUpdateAPIView
 from .serializers import UserSerializer, AuthTokenSerializer

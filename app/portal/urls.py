@@ -3,7 +3,7 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 
-from portal import views
+# from portal import views
 from . import views
 
 # `DefaultRouter` provided by DRF automatically creates URL routing for us
